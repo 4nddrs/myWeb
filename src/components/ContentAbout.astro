@@ -1,0 +1,132 @@
+---
+import { Code } from "astro:components";
+
+const code = `from typing import List, Literal, Optional
+
+class Developer:
+    def __init__(self, name: str, skills: List[str], interests: List[str]):
+        self.name = name
+        self.skills = skills
+        self.interests = interests
+
+class TechStack:
+    def __init__(self):
+        self.languages = [
+            'Python', 'TypeScript', 'Go', 'Bash'
+        ]
+        self.frameworks_libraries = [
+            'FastAPI', 'Flask', 'Astro', 'React', 'TailwindCSS', 'PyTorch'
+        ]
+        self.databases = [
+            'PostgreSQL', 'SQLite', 'MongoDB', 'Firebase'
+        ]
+        self.dev_tools = [
+            'Docker', 'Kubernetes', 'Git', 'Node.js', 'Postman', 'Vite'
+        ]
+        self.design_productivity = [
+            'Figma', 'Obsidian'
+        ]
+        self.ides = [
+            'VS Code', 'Neovim'
+        ]
+        self.operating_systems = [
+            'Arch Linux', 'Debian', 'Kali Linux'
+        ]
+# Initialize Tech Stack
+stack = TechStack()
+
+# Developer Profile
+me = Developer(
+    name='Andrés Menchaca',
+    skills=[
+        *stack.dev_tools,
+        *stack.backend,
+        *stack.frontend,
+        *stack.security_research
+    ],
+    interests=[
+        'Cybersecurity',
+        'Linux & Terminal Automation',
+        'Smart Contract Security',
+        'Clean Architecture',
+        'Web3 Infrastructure'
+    ]
+)
+
+def get_contact(platform: Literal['github', 'linkedIn', 'email', 'website']) -> str:
+    """
+    Returns the professional contact link based on the platform.
+    """
+    match platform:
+        case 'github':
+            return 'https://github.com/4nddrs'
+        case 'linkedIn':
+            return 'https://www.linkedin.com/in/4nddrs'
+        case 'email':
+            return 'joseandres190503@gmail.com'
+        case 'website':
+            return 'https://4nddrs.netlify.app'
+        case _:
+            return 'System 404: Platform not found.'
+
+if __name__ == "__main__":
+    print(f"Ready to build with {me.name}?")
+
+`;
+---
+
+<Code code={code} lang="py" theme="github-dark" wrap={true} />
+
+<script>
+  // Hacer los enlaces clicables en el código
+  document.addEventListener("DOMContentLoaded", () => {
+    const codeBlock = document.querySelector("pre.astro-code code");
+    if (codeBlock) {
+      const urls = [
+        { text: "https://github.com/4nddrs", url: "https://github.com/4nddrs" },
+        {
+          text: "https://www.linkedin.com/in/4nddrs",
+          url: "https://www.linkedin.com/in/jos%C3%A9-andr%C3%A9s-menchaca-medina-82554330b/",
+        },
+        {
+          text: "joseandres190503@gmail.com",
+          url: "mailto:joseandres190503@gmail.com",
+        },
+        {
+          text: "https://4nddrs.netlify.app",
+          url: "https://4nddrs.netlify.app",
+        },
+      ];
+
+      urls.forEach(({ text, url }) => {
+        codeBlock.innerHTML = codeBlock.innerHTML.replace(
+          new RegExp(`'${text}'`, "g"),
+          `'<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-[#58a6ff] hover:underline cursor-pointer">${text}</a>'`,
+        );
+      });
+    }
+  });
+</script>
+
+<style is:global>
+  /* Custom styling for code block line numbers */
+  pre.astro-code {
+    @apply bg-transparent !important;
+  }
+
+  pre.astro-code code {
+    @apply block;
+    counter-reset: step;
+    counter-increment: step 0;
+  }
+
+  pre.astro-code code .line {
+    @apply relative;
+  }
+
+  pre.astro-code code .line::before {
+    content: counter(step);
+    counter-increment: step;
+    @apply text-gray-600 pr-2;
+  }
+</style>
