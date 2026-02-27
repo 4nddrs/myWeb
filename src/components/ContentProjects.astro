@@ -16,7 +16,7 @@ const projects: Project[] = [
   {
     name: "mkf",
     description:
-      "FastAPI Project Scaffolder: A high-efficiency CLI tool to bootstrap modular, production-ready FastAPI applications with one command. Automates venv, git, and boilerplate.",
+    "FastAPI Project Scaffolder: A high-efficiency CLI tool to bootstrap modular, production-ready FastAPI applications with one command. Automates venv, git, and boilerplate.",
     status: "production",
     tech: ["Python", "FastAPI"],
     link: {
@@ -24,9 +24,19 @@ const projects: Project[] = [
     },
   },
   {
+    name: "snag",
+    description:
+      "SNAG (Simple Network API Gopher) is a high-performance, keyboard-driven Terminal User Interface (TUI) designed specifically for developers who want to explore and test API endpoints without leaving the terminal.",
+    status: "production",
+    tech: ["Go", "TUI"],
+    link: {
+      url: "https://github.com/4nddrs/snag",
+    },
+  },
+  {
     name: "backend-Country",
     description:
-      "Enterprise-grade Equestrian ERP: Scalable FastAPI backend featuring automated Telegram notifications, APScheduler tasks, and Supabase integration with Clean Architecture.",
+    "Enterprise-grade Equestrian ERP: Scalable FastAPI backend featuring automated Telegram notifications, APScheduler tasks, and Supabase integration with Clean Architecture.",
     status: "production",
     tech: ["Python", "FastAPI", "PostgreSQL"],
     link: {
@@ -63,16 +73,6 @@ const projects: Project[] = [
       url: "https://github.com/4nddrs/linux-config",
     },
   },
-  {
-    name: "scriptQR",
-    description:
-      "Cloud-synced CLI for Event Logistics: Automates ticket generation, QR code creation, and real-time Firebase Firestore management.",
-    status: "production",
-    tech: ["Python", "Firebase"],
-    link: {
-      url: "https://github.com/4nddrs/scriptQR",
-    },
-  },
 ];
 
 const getTechColor = (tech: string) => {
@@ -82,6 +82,8 @@ const getTechColor = (tech: string) => {
     PostgreSQL: "#316192",
     YOLOv8: "#ff6b6b",
     React: "#61dafb",
+    Go: "#00add8",
+    TUI: "#a78bfa",
     Linux: "#fcc624",
     Neovim: "#57a143",
     Firebase: "#ffca28",
@@ -156,5 +158,3 @@ const getTechColor = (tech: string) => {
     }
   </div>
 </div>
-
-
