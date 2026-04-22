@@ -2,7 +2,7 @@
 import SocialIcon from "./SocialIcon.astro";
 
 interface Social {
-  icon: "github" | "linkedIn" | "document" | "email" | "xing";
+  icon: "github" | "linkedIn" | "document" | "email" | "xing" | "threads";
   link: string;
   title?: string;
 }
@@ -19,8 +19,13 @@ const socials: Social[] = [
     title: "View LinkedIn Profile",
   },
   {
+    icon: "threads",
+    link: "https://www.threads.net/@4nddrs",
+    title: "View Threads Profile",
+  },
+  {
     icon: "email",
-    link: "mailto:joseandres190503@gmail.com",
+    link: "mailto:4nddrs.dev@gmail.com",
     title: "Send Email",
   },
   {
@@ -28,11 +33,6 @@ const socials: Social[] = [
     link: "/AndresMenchaca.pdf",
     title: "Download CV",
   },
-  // {
-  //   icon: "xing",
-  //   link: "https://www.xing.com/profile/Dejan_Vintonjiv",
-  //   title: "View Xing Profile",
-  // },
 ];
 ---
 
