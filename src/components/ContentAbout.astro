@@ -52,8 +52,10 @@ me = Developer(
         'Web3 Infrastructure'
     ]
 )
+    
+Platform = Literal['github','linkedIn','threads','email','website']
 
-def get_contact(platform: Literal['github', 'linkedIn', 'email', 'website']) -> str:
+def get_contact(platform: Platform) -> str:
     """
     Returns the professional contact link based on the platform.
     """
@@ -62,6 +64,8 @@ def get_contact(platform: Literal['github', 'linkedIn', 'email', 'website']) -> 
             return 'https://github.com/4nddrs'
         case 'linkedIn':
             return 'https://www.linkedin.com/in/4nddrs'
+        case 'threads':
+            return 'https://www.threads.net/@4nddrs'
         case 'email':
             return '4nddrs.dev@gmail.com'
         case 'website':
@@ -87,6 +91,9 @@ if __name__ == "__main__":
         {
           text: "https://www.linkedin.com/in/4nddrs",
           url: "https://www.linkedin.com/in/jos%C3%A9-andr%C3%A9s-menchaca-medina-82554330b/",
+        },
+        { text: "https://www.threads.net/@4nddrs",
+          url: "https://www.threads.net/@4nddrs",
         },
         {
           text: "4nddrs.dev@gmail.com",
